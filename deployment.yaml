@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neo-react
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: neo-react
+  template:
+    metadata:
+      labels:
+        app: neo-react
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
